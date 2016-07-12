@@ -50,3 +50,5 @@ gem 'rails_12factor'
 gem 'twitter-bootstrap-rails'
 
 gem 'simple_form'
+
+gem "font-awesome-rails"

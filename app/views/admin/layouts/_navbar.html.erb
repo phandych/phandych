@@ -1,1 +1,56 @@
-<aside></aside>
+<div class="menu-wrapper text-center">
+	<%= image_tag "admin/admin-logo" %> 
+	<nav class="admin-menu" role="navigation">
+ 		<ul id="nav" role="menu-bar">
+ 			<li class="item-dashboard level-0">
+
+ 				<%= link_to admin_root_path do %>
+ 					<i class="fa fa-tachometer" aria-hidden="true"></i>
+ 					<span>Dashboard</span>
+ 				<% end %>
+ 			</li>
+ 			<li class="item-sales parent level-0">
+
+ 				<%= link_to "#" do %>
+ 					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+ 					<span>Sales</span>
+ 				<% end %>
+ 			</li>
+ 			<li class="item-product parent level-0">
+
+ 				<%= link_to "#" do %>
+ 					<i class="fa fa-th-large" aria-hidden="true"></i>
+ 					<span>Products</span>
+ 				<% end %>
+ 			</li>
+ 			<li class="item-customer parent level-0">
+
+ 				<%= link_to "#" do %>
+ 					<i class="fa fa-users" aria-hidden="true"></i>
+ 					<span>Customers</span>
+ 				<% end %>
+ 			</li>
+ 			<li class="item-marketing parent level-0">
+
+ 				<%= link_to "#" do %>
+ 					<i class="fa fa-bullhorn" aria-hidden="true"></i>
+ 					<span>Marketing</span>
+ 				<% end %>
+ 			</li>
+ 			<li class="item-report parent level-0">
+
+ 				<%= link_to "#" do %>
+ 					<i class="fa fa-bar-chart" aria-hidden="true"></i>
+ 					<span>Reports</span>
+ 				<% end %>
+ 			</li>
+ 			<li class="item-report parent level-0">
+
+ 				<%= link_to "#" do %>
+ 					<i class="fa fa-map" aria-hidden="true"></i>
+ 					<span>Stores</span>
+ 				<% end %>
+ 			</li>
+ 		</ul>
+	</nav>
+</div>
