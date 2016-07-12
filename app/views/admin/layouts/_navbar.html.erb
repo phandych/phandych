@@ -10,18 +10,53 @@
  				<% end %>
  			</li>
  			<li class="item-sales parent level-0">
-
- 				<%= link_to "#" do %>
+ 				<a role="button" data-toggle="collapse" data-target="#collapseSales" data-parent="#adminNav" aria-expanded="false" aria-controls="collapseSales">
  					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
- 					<span>Sales</span>
- 				<% end %>
+				 	<span>Sales</span>
+				</a>
+				<div id="collapseSales" class="submenu text-left level-0">
+ 					<strong class="submenu-title">Products</strong>
+ 					<ul class="level-1" role="menu">
+ 						<li class="parent">
+ 							<strong class="submenu-group-title" role="presentation"><span>Order</span></strong>
+ 							<div class="submenu">
+	 							<ul>
+	 								<li>
+	 									<%= link_to "Order", "#" %>
+	 								</li>
+	 								<li>
+	 									<%= link_to "order", "#" %>
+	 								</li>
+	 							</ul>
+	 						</div>
+ 						</li>
+ 					</ul>
+ 				</div>
+				
  			</li>
  			<li class="item-product parent level-0">
-
- 				<%= link_to "#" do %>
+ 			<a role="button" data-toggle="collapse" data-target="#collapseProducts" data-parent="#adminNav" aria-expanded="false" aria-controls="collapseProducts">
  					<i class="fa fa-th-large" aria-hidden="true"></i>
- 					<span>Products</span>
- 				<% end %>
+				 	<span>Products</span>
+				</a>
+ 				<div id="collapseProducts" class="submenu text-left level-0">
+ 					<strong class="submenu-title">Products</strong>
+ 					<ul class="level-1" role="menu">
+ 						<li class="parent">
+ 							<strong class="submenu-group-title" role="presentation"><span>Inventory</span></strong>
+ 							<div class="submenu">
+	 							<ul>
+	 								<li>
+	 									<%= link_to "Catalog", "#" %>
+	 								</li>
+	 								<li>
+	 									<%= link_to "Category", "#" %>
+	 								</li>
+	 							</ul>
+	 						</div>
+ 						</li>
+ 					</ul>
+ 				</div>
  			</li>
  			<li class="item-customer parent level-0">
 
@@ -54,3 +89,4 @@
  		</ul>
 	</nav>
 </div>
+
