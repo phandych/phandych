@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+ 
+
   namespace :admin do
-    get 'login' => 'sessions#new'
-    post 'login' => 'sessions#create'
-    delete 'logout' => 'sessions#destroy'
     root 'pages#index'
+
+    get 'login' => 'sessions#new'
+
+    post 'login' => 'sessions#create'
+
+    delete 'logout' => 'sessions#destroy'
+
+    get 'categories/new'
+
+    get 'category' => 'categories#index'
+    
   end
 
  

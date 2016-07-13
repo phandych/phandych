@@ -1,4 +1,11 @@
+body {
+	background-color: #f2f2f2 !important; 
+}
 
+a:hover {
+	text-decoration: none !important;
+	cursor: pointer;
+}
 .menu-wrapper {
 	position: fixed;
 	left: 0;
@@ -28,6 +35,8 @@
 			padding: 0;
 
 			li.level-0 {
+
+				cursor: pointer;
 
 				&:hover {
 					background: #455a64;
@@ -134,11 +143,12 @@
 
 
 .page-wrapper {
-	margin-left: 100px;
-	padding: 0 25px;
+	margin-left: 8.800000000000001rem;
+	padding: 0 35px;
 
 	.page-header {
-		margin: 0;
+		margin-top: 0;
+		border-bottom: 1px solid lightgray;
 
 		.col-md-8 {
 			padding-left: 0;
@@ -150,7 +160,7 @@
 	}
 
 	.page-header-actions {
-		padding-top: 22px;
+		padding-top: 35px;
 
 		.admin-user {
 		    float: right;
@@ -159,8 +169,26 @@
 		    z-index: 390;
 
 		    .dropdown-menu {
-		    	left: -69px;
+		    	left: -93px;
 		    }
 		}
+	}
+
+	.page-main-actions {
+
+		.navbar-form {
+			padding: 0;
+		}
+
+		.navbar-right {
+			margin: 0;
+			padding-top: 8px;
+		}
+	}
+
+	.page-main-container {
+		background: #fff;
+		padding: 15px;
+		margin-top: 20px;
 	}
 }
