@@ -10,10 +10,7 @@ Rails.application.routes.draw do
 
     delete 'logout' => 'sessions#destroy'
 
-    get 'categories/new'
-
-    get 'category' => 'categories#index'
-    
+    resources :categories
   end
 
  
