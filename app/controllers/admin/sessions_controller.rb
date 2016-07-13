@@ -7,7 +7,7 @@ class Admin::SessionsController < ApplicationController
 		if @admin && @admin.authenticate(params[:session][:password])
 			log_in(@admin)
 			flash[:success] = "Anda berhasil login"
-			redirect_back_or(@admin)
+			redirect_to admin_root_path
 		else
 			flash[:warning] = "Email atau Password anda salah!"
 			render :new
@@ -16,6 +16,6 @@ class Admin::SessionsController < ApplicationController
 
 	def destroy
 		log_out if logged_in?
-		redirect_to root_path
+		redirect_to admin_login_path
 	end
 end

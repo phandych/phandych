@@ -5,7 +5,7 @@ class Admin::CategoriesController < ApplicationController
 	before_action :set_category, only: [:edit, :update]
 
 	def index
-		@categories = Category.where(["LOWER(name) LIKE ?", "%#{params[:search].downcase}%"])
+		@categories = Category.where(["LOWER(name) LIKE ?", "%#{params[:search]}%"]).first
 	end
 
 	def new
