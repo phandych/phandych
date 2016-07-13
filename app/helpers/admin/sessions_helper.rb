@@ -13,7 +13,6 @@ module Admin::SessionsHelper
 
 	def logged_in_admin?
 		unless logged_in?
-			store_location
 			flash[:danger] = "Please login"
 			redirect_to admin_login_path
 		end
