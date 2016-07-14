@@ -1,0 +1,26 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<div class="page-main-container row">
+	<table class="table table-bordered table-hover"> 
+		<thead> 
+			<tr>
+				<th class="a">Thumbnail</th>
+				<th class="a">Product</th> 
+				<th class="a">SKU</th>
+				<th class="a">Cost</th>
+				<th class="a">Price</th>   
+			</tr> 
+		</thead> 
+		<tbody> 
+			<% @products.each do |product| %>
+				<tr> 
+					<td><%= image_tag product.picture %></td> 
+					<td><%= product.product_name %></td> 
+					<td><%= product.sku %></td>
+					<td>0</td>
+					<td><%= product.price %></td> 
+				</tr> 
+			<% end %>
+		</tbody> 
+	</table>
+</div>

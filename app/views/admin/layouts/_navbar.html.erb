@@ -1,5 +1,5 @@
 <div class="menu-wrapper text-center">
-	<%= image_tag "admin/admin-logo" %> 
+	<%= link_to (image_tag "admin/admin-logo"), admin_root_path %> 
 	<nav class="admin-menu" role="navigation">
  		<ul id="nav" role="menu-bar">
  			<li class="item-dashboard level-0">
@@ -47,7 +47,7 @@
  							<div class="submenu">
 	 							<ul>
 	 								<li>
-	 									<%= link_to "Catalog", "#" %>
+	 									<%= link_to "Catalog", admin_products_path %>
 	 								</li>
 	 								<li>
 	 									<%= link_to "Category", admin_categories_path %>

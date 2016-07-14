@@ -80,7 +80,7 @@ a:hover {
 				    top: 0;
 				    transform: translateX(-100%);
 				    transition-property: transform, visibility;
-				    transition-duration: .3s;
+				    transition-duration: .15s;
 				    transition-timing-function: ease-in-out;
 				    visibility: hidden;
 				    z-index: 697;
@@ -197,3 +197,50 @@ a:hover {
 		margin-top: 20px;
 	}
 }
+
+.wrapper-page {
+    margin: 15% auto;
+    position: relative;
+
+    .card-box {
+    padding: 20px;
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-clip: padding-box;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+
+    	.btn {
+    		margin-top: 20px;
+    		width: 100%;
+    	}
+	}
+}
+
+.table th .current {
+	padding-right: 12px;
+	width: 100%;
+
+	&.asc {
+    background: url(../admin/sort_asc.png) no-repeat center right;
+    float: right;
+	}
+
+	&.desc {
+    background: url(../admin/sort_desc.png) no-repeat center right;
+    float: right;
+	}
+
+}
+
+
+.table>thead:first-child>tr:first-child>th {
+	padding: 0;
+
+	a, &.a {
+		padding: 8px;
+	}
+}
+

@@ -3,9 +3,10 @@ class Admin::CategoriesController < ApplicationController
 
 	before_action :logged_in_admin?
 	before_action :set_category, only: [:edit, :update]
+	helper_method :sort_column, :sort_direction
 
 	def index
-		@categories = Category.where(["LOWER(name) LIKE ?", "%#{params[:search]}%"]).first
+		@categories = Category.search(params[:search]).order(sort_column + " " + sort_direction)
 	end
 
 	def new
@@ -32,5 +33,13 @@ class Admin::CategoriesController < ApplicationController
 		def category_params
 			params.require(:category).permit(:name)
 		end
+
+		def sort_column
+		    Category.column_names.include?(params[:sort]) ? params[:sort] : "name"
+		  end
+		  
+		  def sort_direction
+		    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+		  end
 
 end

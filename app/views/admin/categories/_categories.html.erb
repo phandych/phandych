@@ -1,0 +1,22 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<div class="page-main-container row">
+	<table class="table table-bordered table-hover"> 
+		<thead> 
+			<tr>
+				<th><%= sortable "name", "Category Name" %></th>
+				<th class="a">Items Count</th> 
+				<th class="a">Action</th> 
+			</tr> 
+		</thead> 
+		<tbody> 
+			<% @categories.each do |category| %>
+				<tr> 
+					<td><%= category.category_name %></td> 
+					<td>0</td> 
+					<td><%= link_to "Edit", edit_admin_category_path(category)  %></td> 
+				</tr> 
+			<% end %>
+		</tbody> 
+	</table>
+</div>

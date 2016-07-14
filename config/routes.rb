@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
- 
 
   namespace :admin do
     root 'pages#index'
@@ -10,7 +9,8 @@ Rails.application.routes.draw do
 
     delete 'logout' => 'sessions#destroy'
 
-    resources :categories
+    resources :categories, only: [:index, :new, :create, :edit, :update]
+    resources :products, only: [:index, :new, :create, :edit, :update]
   end
 
  

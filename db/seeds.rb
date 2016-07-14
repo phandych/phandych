@@ -17,3 +17,21 @@ Category.create! name: "tools"
 Category.create! name: "houseware"
 Category.create! name: "appliances"
 Category.create! name: "hobbies"
+
+
+Product.delete_all
+category = Category.first
+10.times do 
+	name = Faker::Commerce.product_name.downcase
+	price = Faker::Commerce.price
+	sku = Faker::Code.isbn
+	model = Faker::Code.asin
+	description = Faker::Lorem.paragraph
+	picture = Faker::Placeholdit.image("50x50")
+	category.products.create!(name: name,
+					sku: sku,
+					model: model,
+					price: price,
+					description: description,
+					picture: picture)
+end

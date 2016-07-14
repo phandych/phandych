@@ -1,17 +1,14 @@
 <% provide(:title, "Category") %>
 
-<%= render 'header' %>
-<div class="page-main-container row">
-	<table class="table table-bordered table-hover"> 
-		<thead> 
-			<tr> 
-				<th>Category Name</th> 
-				<th>Items Count</th> 
-				<th>Action</th> 
-			</tr> 
-		</thead> 
-		<tbody> 
-			<%= render @categories %>
-		</tbody> 
-	</table>
+<div class="page-main-actions row">
+  <%= form_tag admin_categories_path, method: :get, id: "categories_search", class: "navbar-form navbar-left", role: "search" do %>
+  		<div class="form-group">
+  		<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
+  		</div>
+  <% end %>
+  <div class="navbar-right">
+    <button type="submit" class="btn btn-default">Create Category</button>
+  </div>
 </div>
+      
+<div id="categories"><%= render 'categories' %></div>
