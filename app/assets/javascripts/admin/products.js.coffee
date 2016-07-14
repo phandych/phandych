@@ -5,12 +5,17 @@
 	#Auto search
 
 	$(document).on "turbolinks:load", ->
-		$("#categories_search input").keyup ->
-			$.get($("#categories_search").attr("action"), $("#categories_search").serialize(), null, "script")
+		
+		$("#products_search input").keyup ->
+			$.get($("products_search").attr("action"), $("#products_search").serialize(), null, "script")
 			return false
 
 	# Search, Page & Sort tidak merubah url
-	
-	$(document).on "click", "#categories th a", ->
+	$ ->
+		$(document).on "click", "#products .pagination a", ->
 			$.getScript(this.href)
 			return false
+		$(document).on "click", "#products th a", ->
+			$.getScript(this.href)
+			return false
+

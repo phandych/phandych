@@ -5,10 +5,10 @@
 		<thead> 
 			<tr>
 				<th class="a">Thumbnail</th>
-				<th class="a">Product</th> 
-				<th class="a">SKU</th>
+				<th class="sortable"><%= sortable "name", "Product" %></th> 
+				<th class="sortable"><%= sortable "sku" %></th>
 				<th class="a">Cost</th>
-				<th class="a">Price</th>   
+				<th class="sortable"><%= sortable "price" %></th>   
 			</tr> 
 		</thead> 
 		<tbody> 
@@ -24,3 +24,4 @@
 		</tbody> 
 	</table>
 </div>
+<%= will_paginate @products %>
