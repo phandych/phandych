@@ -1,0 +1,24 @@
+<%= simple_form_for [:admin, @product], html: { class: "form-horizontal"}, wrapper: :horizontal_form do |f| %>
+  <div class="page-main-container field field-image">
+    <h2>Images</h2>
+  </div>
+  <div class="page-main-container product-detail">
+    <h2>Product Details</h2>
+    <%= f.input :name %>
+    <span>kategori</span>
+    <%= f.input :sku %>
+    <%= f.input :model %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <span>Spesification</span>
+  </div>
+
+  <div class="page-main-container product-shipping">
+    <h2>Shipping Options</h2>
+  </div>
+
+  <div class="page-main-container">
+    <%= link_to "Back", admin_products_path, class: "btn btn-default" %>
+    <%= f.button :submit, yield(:button), class: "btn btn-primary" %>
+  </div>
+<% end %>

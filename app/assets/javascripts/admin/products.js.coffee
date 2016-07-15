@@ -5,9 +5,8 @@
 	#Auto search
 
 	$(document).on "turbolinks:load", ->
-		
 		$("#products_search input").keyup ->
-			$.get($("products_search").attr("action"), $("#products_search").serialize(), null, "script")
+			$.get($("#products_search").attr("action"), $("#products_search").serialize(), null, "script")
 			return false
 
 	# Search, Page & Sort tidak merubah url

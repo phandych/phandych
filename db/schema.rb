@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160714131517) do
     t.string   "model"
     t.float    "price"
     t.text     "description"
-    t.string   "picture"
+    t.string   "image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

@@ -189,13 +189,27 @@ a:hover {
 			margin: 0;
 			padding-top: 8px;
 		}
-	}
 
-	.page-main-container {
+		.page-main-container {
 		background: #fff;
 		padding: 15px;
-		margin-top: 20px;
+		margin: 20px 0;
+
+			&.product-detail {
+
+				.control-label {
+					text-align: left !important;
+				}
+				
+			}
+
+			.btn-primary {
+				float: right;
+			}
+		}
 	}
+
+	
 }
 
 .wrapper-page {

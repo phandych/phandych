@@ -8,17 +8,19 @@
 				<th class="sortable"><%= sortable "name", "Product" %></th> 
 				<th class="sortable"><%= sortable "sku" %></th>
 				<th class="a">Cost</th>
-				<th class="sortable"><%= sortable "price" %></th>   
+				<th class="sortable"><%= sortable "price" %></th>
+				<th class="a">Action</th>   
 			</tr> 
 		</thead> 
 		<tbody> 
 			<% @products.each do |product| %>
 				<tr> 
-					<td><%= image_tag product.picture %></td> 
+					<td><%= image_tag product.image %></td> 
 					<td><%= product.product_name %></td> 
 					<td><%= product.sku %></td>
 					<td>0</td>
 					<td><%= product.price %></td> 
+					<td><%= link_to "Edit", edit_admin_product_path(product)  %></td>
 				</tr> 
 			<% end %>
 		</tbody> 
