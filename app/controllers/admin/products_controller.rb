@@ -11,6 +11,7 @@ class Admin::ProductsController < ApplicationController
 
 	def new
 		@product = Product.new
+		@product_images = @product.product_images.build
 	end
 
 	def create
@@ -24,6 +25,7 @@ class Admin::ProductsController < ApplicationController
 	end
 
 	def edit
+		@product_images = @product.product_images.where(product_id: @product.id)
 	end
 
 	def update
@@ -42,8 +44,9 @@ class Admin::ProductsController < ApplicationController
 		end
 
 		def product_params
-			params.require(:product).permit( :name, :sku, :model, :description, :price, :image )
+			params.require(:product).permit( :name, :sku, :model, :description, :price, product_images_attributes: [:id, :product_id, :image] )
 		end
+
 
 		def sort_column
 			Product.column_names.include?(params[:sort]) ? params[:sort] : "name"

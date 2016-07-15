@@ -63,3 +63,5 @@ gem 'bootstrap-will_paginate'
 gem 'mini_magick'
 
 gem 'carrierwave'
+
+gem 'jquery-fileupload-rails'

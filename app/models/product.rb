@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
   	belongs_to :category
-  	mount_uploader :image, ImageUploader
+  	has_many :product_images
+  	accepts_nested_attributes_for :product_images
+  	
 
   	validates_presence_of :name, :sku, :model, :price, :description
   	validates :price, numericality: true
@@ -8,6 +10,7 @@ class Product < ActiveRecord::Base
 	def product_name
 		self.name = name.titleize
 	end
+
 
 	def self.search(search)
 	  if search

@@ -27,11 +27,9 @@ category = Category.first
 	sku = Faker::Code.isbn
 	model = Faker::Code.asin
 	description = Faker::Lorem.paragraph
-	image = Faker::Placeholdit.image("50x50")
 	category.products.create!(name: name,
 					sku: sku,
 					model: model,
 					price: price,
-					description: description,
-					image: image)
+					description: description)
 end

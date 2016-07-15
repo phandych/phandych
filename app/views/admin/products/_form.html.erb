@@ -4,7 +4,9 @@
     <div id="image-container" class="images">
       <div class="image image-placeholder">
         <i class="fa fa-camera" aria-hidden="true"></i>
-        <%= f.input :image, label: false %>
+        <%= f.fields_for :product_images, html: { multipart: true } do |builder| %>
+          <%= render "product_images", f: builder %>
+        <% end %>
         <p class="image-placeholder-text">Click here to add images.</p>
       </div>
     </div>
@@ -29,19 +31,3 @@
     <%= f.button :submit, yield(:button), class: "btn btn-primary" %>
   </div>
 <% end %>
-<script type="text/javascript">
-  $(document).ready(function(){
-    var preview = $(".upload-preview img");
-    
-    $(".file").change(function(event){
-       var input = $(event.currentTarget);
-       var file = input[0].files[0];
-       var reader = new FileReader();
-       reader.onload = function(e){
-           image_base64 = e.target.result;
-           preview.attr("src", image_base64);
-       };
-       reader.readAsDataURL(file);
-    });
-});
-</script>
