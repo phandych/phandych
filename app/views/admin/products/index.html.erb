@@ -3,7 +3,7 @@
 <div class="page-main-actions row">
   <%= form_tag admin_products_path, method: :get, id: "products_search", class: "navbar-form navbar-left", role: "search" do %>
   		<div class="form-group">
-  		<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search" %>
+  		<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search by Name or SKU" %>
   		</div>
   <% end %>
   <div class="navbar-right">

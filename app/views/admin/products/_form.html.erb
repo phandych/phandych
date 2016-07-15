@@ -1,10 +1,17 @@
-<%= simple_form_for [:admin, @product], html: { class: "form-horizontal"}, wrapper: :horizontal_form do |f| %>
+<%= simple_form_for [:admin, @product], html: { class: "form-horizontal", multipart: true}, wrapper: :horizontal_form do |f| %>
   <div class="page-main-container field field-image">
     <h2>Images</h2>
+    <div id="image-container" class="images">
+      <div class="image image-placeholder">
+        <i class="fa fa-camera" aria-hidden="true"></i>
+        <%= f.input :image, label: false %>
+        <p class="image-placeholder-text">Click here to add images.</p>
+      </div>
+    </div>
   </div>
   <div class="page-main-container product-detail">
     <h2>Product Details</h2>
-    <%= f.input :name %>
+    <%= f.input :name, require: false %>
     <span>kategori</span>
     <%= f.input :sku %>
     <%= f.input :model %>
@@ -22,3 +29,19 @@
     <%= f.button :submit, yield(:button), class: "btn btn-primary" %>
   </div>
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var preview = $(".upload-preview img");
+    
+    $(".file").change(function(event){
+       var input = $(event.currentTarget);
+       var file = input[0].files[0];
+       var reader = new FileReader();
+       reader.onload = function(e){
+           image_base64 = e.target.result;
+           preview.attr("src", image_base64);
+       };
+       reader.readAsDataURL(file);
+    });
+});
+</script>

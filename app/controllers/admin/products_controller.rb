@@ -42,7 +42,7 @@ class Admin::ProductsController < ApplicationController
 		end
 
 		def product_params
-			params.require(:product).permit(:name, :sku, :model, :description, :price )
+			params.require(:product).permit( :name, :sku, :model, :description, :price, :image )
 		end
 
 		def sort_column
