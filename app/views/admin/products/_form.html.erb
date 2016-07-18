@@ -2,13 +2,9 @@
   <div class="page-main-container field field-image">
     <h2>Images</h2>
     <div id="image-container" class="images">
-      <div class="image image-placeholder">
-        <i class="fa fa-camera" aria-hidden="true"></i>
-        <%= f.fields_for :product_images, html: { multipart: true } do |builder| %>
+        <%= f.fields_for :product_images do |builder| %>
           <%= render "product_images", f: builder %>
         <% end %>
-        <p class="image-placeholder-text">Click here to add images.</p>
-      </div>
     </div>
   </div>
   <div class="page-main-container product-detail">
@@ -19,7 +15,16 @@
     <%= f.input :model %>
     <%= f.input :price %>
     <%= f.input :description %>
-    <span>Spesification</span>
+    <div class="form-group text required product-specification">
+        <label class="text required col-sm-3 control-label">Specification</label>
+        <div class="col-md-9">
+          <%= f.fields_for :product_specifications do |builder| %>
+            <%= render 'product_specification', f: builder %>
+          <% end %>
+          <%= link_to_add_fields "Add New Table", f, :product_specifications %>
+        </div>
+       
+    </div>
   </div>
 
   <div class="page-main-container product-shipping">

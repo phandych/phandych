@@ -1,0 +1,15 @@
+<fieldset class="product-specification">
+	<div class="form-group">
+		<%= f.text_field :name, class: "form-control", placeholder: "Table Name", style: "width: 826.31px;" %>
+		<%= link_to '#', class: "remove_fields title" do %>
+			<i class="fa fa-times-circle" aria-hidden="true"></i>
+		<% end %>
+		<%= f.hidden_field :_destroy %>
+		
+		<%= f.fields_for :product_specification_tables do |builder| %>
+			<%= render 'product_specification_table', f: builder %>
+		<% end %>
+		<%= link_to_add_fields "Add Table", f, :product_specification_tables %>
+
+	</div>
+</fieldset>

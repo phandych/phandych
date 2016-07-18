@@ -1,3 +1,44 @@
 // Place all the styles related to the admin/products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.product-specification {
+	.form-group {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+	.col-md-6 {
+		padding: 0;		
+	}
+
+
+	input {
+			margin: 15px 0;
+
+			&.table {
+				width: 95%;
+			}
+
+			&.right {
+				float: right
+			}
+	}
+
+	.btn {
+		width: 100%;
+	}
+
+	.remove_fields {
+		
+			&.title {
+				i {
+					right: 15px;
+				}
+			}
+			i {
+				position: absolute;
+				top: 25px;
+				right: 0;
+			}
+		
+	}
+}
