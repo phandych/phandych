@@ -1,13 +1,14 @@
 <fieldset class="product-specification">
 
+		
 		<div class="col-md-6">
 			<%= f.text_field :label, class: "form-control table", placeholder: "Table Label" %>
 		</div>
 		<div class="col-md-6">
 			<%= f.text_field :content, class: "form-control table", placeholder: "Tabel Content" %>
+			<%= f.hidden_field :_destroy %>
 			<%= link_to '#', class: "remove_fields table" do %>
 				<i class="fa fa-times-circle" aria-hidden="true"></i>
 			<% end %>
 		</div>
-		<%= f.hidden_field :_destroy %>
 </fieldset>
