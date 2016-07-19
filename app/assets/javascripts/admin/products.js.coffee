@@ -30,3 +30,10 @@
 			regexp = new RegExp($(this).data('id'), 'g')
 			$(this).before($(this).data('fields').replace(regexp, time))
 			event.preventDefault()
+
+
+	# Category Multi Select
+	$(document).on "turbolinks:load", ->
+		$("#product_category_ids").chosen
+			width: '100%'
+  			

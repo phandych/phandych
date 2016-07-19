@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-  	belongs_to :category
+  	has_many :categorizations
+  	has_many :categories, through: :categorizations
   	has_many :product_images, dependent: :destroy
   	has_many :product_specifications, dependent: :destroy
   	accepts_nested_attributes_for :product_images, allow_destroy: true
@@ -8,6 +9,12 @@ class Product < ActiveRecord::Base
 
   	validates_presence_of :name, :sku, :model, :price, :description
   	validates :price, numericality: true
+  	attr_reader :product_tokens
+
+  	def product_tokens
+  		
+  	end
+
 
 	def product_name
 		self.name = name.titleize

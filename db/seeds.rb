@@ -20,14 +20,13 @@ Category.create! name: "appliances"
 Category.create! name: "hobbies"
 
 
-category = Category.first
 10.times do 
 	name = Faker::Commerce.product_name.downcase
 	price = Faker::Commerce.price
 	sku = Faker::Code.isbn
 	model = Faker::Code.asin
 	description = Faker::Lorem.paragraph
-	category.products.create!(name: name,
+	Product.create!(name: name,
 					sku: sku,
 					model: model,
 					price: price,

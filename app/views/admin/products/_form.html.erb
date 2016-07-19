@@ -10,7 +10,12 @@
   <div class="page-main-container product-detail">
     <h2>Product Details</h2>
     <%= f.input :name, require: false %>
-    <span>kategori</span>
+    <div class="form-group text required product-category">
+        <label class="text required col-sm-3 control-label">Category</label>
+        <div class="col-md-9">
+        <%= f.collection_select :category_ids, Category.order(:name), :id, :name, {}, { multiple: true } %>
+        </div> 
+    </div>
     <%= f.input :sku %>
     <%= f.input :model %>
     <%= f.input :price %>
@@ -23,7 +28,6 @@
           <% end %>
           <%= link_to_add_fields "Add New Table", f, :product_specifications %>
         </div>
-       
     </div>
   </div>
 

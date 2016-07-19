@@ -11,7 +11,7 @@ class Admin::ProductsController < ApplicationController
 
 	def new
 		@product = Product.new
-		@product_images = @product.product_images.build
+		@product_image = @product.product_images.build
 	end
 
 	def create
@@ -36,12 +36,6 @@ class Admin::ProductsController < ApplicationController
 		end
 	end
 
-	def destroy
-		@images = @product.product_images.find(params[:image_id])
-		@images.destroy
-		redirect_to root_url
-	end
-
 	private
 
 		def set_product
@@ -49,7 +43,9 @@ class Admin::ProductsController < ApplicationController
 		end
 
 		def product_params
-			params.require(:product).permit( :name, :sku, :model, :description, :price, product_images_attributes: [:id, :product_id, :image, :_destroy], product_specifications_attributes: [:id, :product_id, :name, :_destroy, product_specification_tables_attributes: [:id, :label, :content, :_destroy] ] )
+			params.require(:product).permit( :name, :sku, :model, :description, :price, { category_ids: []}, 
+											  product_images_attributes: [:id, :product_id, :image, :_destroy], 
+											  product_specifications_attributes: [:id, :product_id, :name, :_destroy, product_specification_tables_attributes: [:id, :label, :content, :_destroy] ] )
 		end
 
 
