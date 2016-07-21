@@ -1,0 +1,62 @@
+body {
+	background: #f2f2f2;
+}
+#frontend-page {
+	.container {
+		background: #fff;
+	}
+
+	.container-footer {
+		background: #fff;
+		margin-top: 25px;
+	}
+
+	.navbar {
+		background: #fff;
+
+		.navbar-right {
+
+			i {
+				padding: 10px 15px 10px 15px;
+			}
+			
+		}
+	}
+
+	#search {
+		input {
+			width: 400px;
+		}
+	}
+
+	#user-form {
+	    padding: 20px;
+	    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+	    -webkit-border-radius: 5px;
+	    border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    background-clip: padding-box;
+	    margin-bottom: 20px;
+	    background-color: #ffffff;
+
+	    &.form-margin {
+	    	margin-top: 80px;
+
+	    	.btn {
+	    		width: 100%;
+			    background-color: #f05622;
+			    border-bottom: 2px solid #e62e04 !important;
+			    border-radius: 0;
+			    transition: all 0.3s ease-out;
+			    color: #fff;
+			    border-color: transparent;
+
+			    &:hover {
+			    	background-color: #df3e26;
+  					border-bottom: 2px solid #df3e26;
+			    }
+	    	}
+
+	    }
+	}
+}

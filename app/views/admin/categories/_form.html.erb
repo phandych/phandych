@@ -1,0 +1,39 @@
+<%= simple_form_for [:admin, @category] do |f| %>
+	<div class="page-main-container row">
+		<div class="col-md-3">
+			<h3>Category</h3>
+			<%= f.input :name, label: false, placeholder: "Category Name" %>
+		</div>
+		<div class="col-md-9">
+			<h3>Products</h3>
+			<table class="table table-bordered table-hover"> 
+				<thead> 
+					<tr>
+						<th class="a">Thumbnail</th>
+						<th class="a">Product</th> 
+						<th class="a">SKU</th>
+						<th class="a">Price</th>
+					</tr> 
+				</thead> 
+				<tbody> 
+					<% @category.products.each do |product| %>
+						<tr>
+							<td>
+							<% product.product_images.each do |product_image| %>
+								<%= image_tag product_image.image.thumb.url %>
+							<% end %>
+							</td>
+							<td><%= product.product_name %></td> 
+							<td><%= product.sku %></td>
+							<td><%= product.price %></td> 
+						</tr> 
+					<% end %>
+				</tbody> 
+			</table>
+		</div>
+	</div>
+	<div class="page-main-container">
+	    <%= link_to "Back", admin_products_path, class: "btn btn-default" %>
+	    <%= f.button :submit, yield(:button), class: "btn btn-primary" %>
+  	</div>
+<% end %>

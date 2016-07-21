@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require chosen-jquery
+//= require jquery-fileupload/basic-plus
+//= require jquery-fileupload/vendor/tmpl
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .

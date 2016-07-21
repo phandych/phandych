@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+  root 'frontend/pages#home'
+  
+  get 'signup' => 'frontend/users#new'
+  
+  post 'signup' => 'frontend/users#create'
+
+  get 'login' => 'frontend/sessions#new'
+  
+  post 'login' => 'frontend/sessions#create'
+
+  delete 'logout' => 'frontend/sessions#destroy'
+
+  namespace :frontend do
+    resources :users
+  end
+
+
+
+  namespace :frontend do
+  get 'pages/home'
+  end
 
   namespace :admin do
     root 'pages#index'

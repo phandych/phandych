@@ -15,4 +15,8 @@ class Category < ActiveRecord::Base
 		self.name = name.titleize
 	end
 
+	def category_product
+		"#{product.name.first}"
+	end
+
 end

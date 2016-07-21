@@ -1,11 +1,5 @@
 <% provide(:title, "Edit Category") %>
-<div class="page-main-container row">
-	<div class="col-md-3">
-		<h2>Category</h2>
-		<%= simple_form_for [:admin, @category] do |f| %>
-			<%= f.input :name %>
-			<%= f.button :submit %>
-		<% end %>
-	</div>
-	<div class="col-md-9"></div>
+<% provide(:button, "Update Category") %>
+<div class="page-main-actions row">
+	<%= render 'form' %>
 </div>
