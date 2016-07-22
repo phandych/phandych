@@ -2,61 +2,146 @@ body {
 	background: #f2f2f2;
 }
 #frontend-page {
-	.container {
-		background: #fff;
-	}
-
-	.container-footer {
-		background: #fff;
-		margin-top: 25px;
-	}
-
 	.navbar {
 		background: #fff;
+		#header{
+			background: transparent;
 
-		.navbar-right {
+			.navbar-right {
 
-			i {
-				padding: 10px 15px 10px 15px;
+				.btn-signup {
+					a {
+						padding: 5px 25px;
+					    background: #f51f14;
+					    margin-top: 10px;
+					    color: #fff;
+					    font-weight: 700;
+
+					}
+					
+				}
+
+				i {
+					padding: 10px 15px 10px 15px;
+				}
+				
 			}
-			
+		}
+
+		#search {
+			input {
+				width: 400px;
+			}
 		}
 	}
 
-	#search {
-		input {
-			width: 400px;
+	
+
+	
+
+	/* Footer */
+
+	#footer {
+		background: #fff;
+		margin-top: 25px;
+
+		#footer-info {
+			border-bottom: 1px solid #eee;
+			padding: 40px 0px;
+
+			.col-md-2 {
+				border-right: 1px solid #eee;
+				width: 20%;
+				
+				height: 215px;
+
+				&.last {
+					border-right: none;
+
+					li {
+						list-style: none;
+						color: #607d8b;
+						margin-top: 5px;
+
+						&.line {
+
+							img {
+								width: 25px;
+								margin-right: 10px;
+							}
+						}
+
+						.fa {
+							margin-right: 10px;
+							font-size: 25px;
+							vertical-align: sub;
+
+						}
+					}
+
+				}
+
+				.fa {
+					color: #607d8b;
+				}
+
+				h4 {
+					margin-top: 20px;
+					font-size: 14px;
+					font-weight: bold;
+					color: #28171b;
+				}
+
+				span {
+					color: #757573;
+				}
+			}
+
 		}
-	}
 
-	#user-form {
-	    padding: 20px;
-	    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
-	    -webkit-border-radius: 5px;
-	    border-radius: 5px;
-	    -moz-border-radius: 5px;
-	    background-clip: padding-box;
-	    margin-bottom: 20px;
-	    background-color: #ffffff;
+		#footer-link {
+			padding: 40px 0;
 
-	    &.form-margin {
-	    	margin-top: 80px;
+			li {
+				list-style: none;
 
-	    	.btn {
-	    		width: 100%;
-			    background-color: #f05622;
-			    border-bottom: 2px solid #e62e04 !important;
-			    border-radius: 0;
-			    transition: all 0.3s ease-out;
-			    color: #fff;
-			    border-color: transparent;
+				a {
+					color: #757573;
+					font-size: 12px;
 
-			    &:hover {
-			    	background-color: #df3e26;
-  					border-bottom: 2px solid #df3e26;
-			    }
-	    	}
+					&:hover {
+						text-decoration: none;
+						color: #e81100;
+					}
+				}
+			}
 
-	    }
+			h4 {
+				font-size: 14px;
+				font-weight: bold;
+				color: #28171b;
+			}
+
+			#subscription {
+
+				input {
+					font-size: 12px;
+				}
+
+				.btn {
+
+					position: absolute;
+				    right: 15px;
+				    top: 35px;
+
+				}
+			}
+
+			.fa {
+				padding-right: 15px;
+			}
+		}
+
+		
 	}
 }

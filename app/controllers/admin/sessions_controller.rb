@@ -1,5 +1,5 @@
 class Admin::SessionsController < ApplicationController
-	layout 'admin/layouts/session'
+	layout 'admin/layouts/session', only: [:new, :create]
 
 	def new
 	end

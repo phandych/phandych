@@ -1,3 +1,33 @@
 // Place all the styles related to the frontend/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#user-form {
+	    padding: 20px;
+	    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+	    -webkit-border-radius: 5px;
+	    border-radius: 5px;
+	    -moz-border-radius: 5px;
+	    background-clip: padding-box;
+	    margin-bottom: 20px;
+	    background-color: #ffffff;
+
+	    &.form-margin {
+	    	margin-top: 80px;
+
+	    	.btn {
+	    		width: 100%;
+			    background-color: #f51f14;
+			    border-bottom: 2px solid #e81100 !important;
+			    border-radius: 0;
+			    transition: all 0.3s ease-out;
+			    color: #fff;
+			    border-color: transparent;
+
+			    &:hover {
+			    	background-color: #e81100;
+  					border-bottom: 2px solid #e81100;
+			    }
+	    	}
+
+	    }
+	}
