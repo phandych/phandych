@@ -16,7 +16,12 @@ body {
 					    margin-top: 10px;
 					    color: #fff;
 					    font-weight: 700;
+					    border-radius: 2px;
+					    transition: all 0.3s ease-out;
 
+					    &:hover {
+					    	background-color: #e81100;
+					    }
 					}
 					
 				}
@@ -47,7 +52,7 @@ body {
 
 		#footer-info {
 			border-bottom: 1px solid #eee;
-			padding: 40px 0px;
+			padding: 25px 0px;
 
 			.col-md-2 {
 				border-right: 1px solid #eee;
@@ -60,20 +65,20 @@ body {
 
 					li {
 						list-style: none;
-						color: #607d8b;
+						color: #28171b;
 						margin-top: 5px;
 
 						&.line {
 
 							img {
-								width: 25px;
-								margin-right: 10px;
+								width: 20px;
+								margin-right: 5px;
 							}
 						}
 
 						.fa {
-							margin-right: 10px;
-							font-size: 25px;
+							margin-right: 5px;
+							font-size: 20px;
 							vertical-align: sub;
 
 						}
@@ -140,6 +145,13 @@ body {
 			.fa {
 				padding-right: 15px;
 			}
+		}
+
+		#copyright {
+	
+			border-top: 2px solid #eee;
+			padding: 15px 0;
+		
 		}
 
 		
