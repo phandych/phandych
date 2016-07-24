@@ -1,2 +1,10 @@
-<h1>Frontend::Pages#home</h1>
-<p>Find me in app/views/frontend/pages/home.html.erb</p>
+<div id="home-content">
+	<% @categories.each do |c| %>
+		<div id="list-category" class="col-md-4">
+			<div class="category-footer">
+				<span class="c-name"><%= c.category_name %></span>
+				<span class="c-products"><%= pluralize(c.products.count, "Product") %></span>
+			</div>
+		</div>
+	<% end %>
+</div>

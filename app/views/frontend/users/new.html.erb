@@ -6,12 +6,16 @@
 				<h3>Sign Up</h3>
 			</div>
 			<%= simple_form_for @user, url: signup_path do |f| %>
-				<%= f.input :name %>
-				<%= f.input :email %>
-				<%= f.input :password %>
-				<%= f.input :password_confirmation %>
+				<%= f.input :name, label: false, placeholder: "Name" %>
+				<%= f.input :email, label: false, placeholder: "Email" %>
+				<%= f.input :password, label: false, placeholder: "Password" %>
+				<%= f.input :password_confirmation, label: false, placeholder: "Password Confirmantion" %>
 				<%= f.button :submit, "Sign Up" %>
 			<% end %>
+		</div>
+		<div class="text-center">
+			<span>Sudah memiliki Akun?</span>
+			<%= link_to "Login", login_path %>
 		</div>
 	</div>
 </div>

@@ -12,22 +12,21 @@
 	    background-color: #ffffff;
 
 	    &.form-margin {
-	    	margin-top: 80px;
+	    	margin-top: 40%;
 
 	    	.btn {
 	    		width: 100%;
-			    background-color: #f51f14;
-			    border-bottom: 2px solid #e81100 !important;
+			    background: linear-gradient(268deg,#f51f14 17%,#ea2f28 100%);
 			    border-radius: 0;
 			    transition: all 0.3s ease-out;
 			    color: #fff;
 			    border-color: transparent;
-
-			    &:hover {
-			    	background-color: #e81100;
-  					border-bottom: 2px solid #e81100;
-			    }
+			    border-radius: 2px;
 	    	}
 
+	    }
+
+	    .link-signup {
+	    	margin-top: 50px;
 	    }
 	}

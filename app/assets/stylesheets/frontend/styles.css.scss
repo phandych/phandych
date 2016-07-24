@@ -2,6 +2,8 @@ body {
 	background: #f2f2f2;
 }
 #frontend-page {
+	/* Header */
+
 	.navbar {
 		background: #fff;
 		#header{
@@ -12,16 +14,12 @@ body {
 				.btn-signup {
 					a {
 						padding: 5px 25px;
-					    background: #f51f14;
+					    background: linear-gradient(268deg,#ea2f28 17%,#ff4000 100%);
 					    margin-top: 10px;
 					    color: #fff;
 					    font-weight: 700;
 					    border-radius: 2px;
 					    transition: all 0.3s ease-out;
-
-					    &:hover {
-					    	background-color: #e81100;
-					    }
 					}
 					
 				}
@@ -42,7 +40,47 @@ body {
 
 	
 
-	
+	/* Content */
+	#home-content {
+
+		#list-category {
+
+			&.col-md-4 {
+				padding-left: 0;
+				padding-right: 0;
+
+				.category-footer {
+				    margin-right: 10px;
+				    margin-bottom: 10px;
+				    background: #fff;
+				    padding: 15px;
+				    color: #666;
+
+				    .c-products {
+				    	float: right;
+				    }
+
+				}
+			}
+
+			&:nth-child(2), &:nth-child(5), &:nth-child(8) {
+				.category-footer {
+					margin-left: 5px;
+					margin-right: 5px;
+				}
+			}
+
+			&:nth-child(3), &:nth-child(6), &:nth-child(9) {
+				.category-footer {
+					margin-left: 10px;
+					margin-right: 0px;
+				}
+			}
+			
+		}
+		
+
+	}
 
 	/* Footer */
 
@@ -79,7 +117,7 @@ body {
 						.fa {
 							margin-right: 5px;
 							font-size: 20px;
-							vertical-align: sub;
+							vertical-align: top;
 
 						}
 					}
