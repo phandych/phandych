@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
 	layout 'admin/layouts/application'
-	before_action :logged_in_admin?
+	before_action :admin_verify?
 	before_action :set_product, only: [:edit, :update]
 	helper_method :sort_column, :sort_direction
 

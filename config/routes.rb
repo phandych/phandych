@@ -11,15 +11,11 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'frontend/sessions#destroy'
 
-  namespace :frontend do
-    resources :users
-  end
 
+  
+  resources :users, only: [:show], module: 'frontend'
 
-
-  namespace :frontend do
-  get 'pages/home'
-  end
+  resources :account_activations, only: [:edit], module: 'frontend'
 
   namespace :admin do
     root 'pages#index'

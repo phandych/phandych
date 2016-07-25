@@ -8,6 +8,10 @@
 			<%= simple_form_for :session, url: login_path do |f| %>
 				<%= f.input :email, label: false, placeholder: "Email" %>
 				<%= f.input :password, label: false, placeholder: "Password" %>
+				<div class="remember">
+					<%= f.check_box :remember_me %>
+			        <span>Remember Me</span>
+				</div>
 				<%= f.button :submit, "Login" %>
 			<% end %>
 			<div class="link-signup text-center">

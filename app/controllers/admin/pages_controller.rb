@@ -1,7 +1,7 @@
 class Admin::PagesController < ApplicationController
 	layout 'admin/layouts/application'
 
-	before_action :logged_in_admin?
+	before_action :admin_verify?
 
   def index
   end
