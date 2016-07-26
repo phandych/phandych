@@ -23,9 +23,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, <%= current_user.first_name %> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to "My Account",user_path(current_user) %></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><%= link_to "Akun Saya",user_path(current_user) %></li>
+            <li><%= link_to "Pesanan Saya", "#" %></li>
+            <li><%= link_to "Wish List", "#" %></li>
+            <li><%= link_to "Pengembalian Produk", "#" %></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to "Logout", logout_path, method: :delete %></li>
           </ul>

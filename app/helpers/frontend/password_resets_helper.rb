@@ -1,0 +1,2 @@
+module Frontend::PasswordResetsHelper
+end

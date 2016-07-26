@@ -1,0 +1,12 @@
+<div id="reset-form" class="row text-center">
+	<div class="col-md-4 col-md-offset-4">
+		<%= simple_form_for(:password_reset, url: password_resets_path) do |f| %>
+			<h2>Retrieve Password</h2>
+			<%= f.input :email, label: false, placeholder: "Email" %>
+			<%= f.button :submit, "Submit" %>
+			<p>
+			<i class="fa fa-info-circle" aria-hidden="true"></i> Please enter your registered email to retrieve your password
+		</p>
+		<% end %>
+	</div>
+</div>

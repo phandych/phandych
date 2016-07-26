@@ -2,7 +2,7 @@ class Frontend::AccountActivationsController < ApplicationController
 	def edit
 		@user = User.find_by(email: params[:email])
 		if @user && !@user.activated? && @user.authenticated?(:activation, params[:id])
-			@user.activate
+			@user.activate_user
 			log_in_user(@user)
 			flash[:success] = "Account Activated"
 			redirect_to @user

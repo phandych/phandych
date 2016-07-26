@@ -30,4 +30,53 @@
 	    .link-signup {
 	    	margin-top: 50px;
 	    }
+
+	    .password-form {
+	    	position: relative;
+
+	    	a.forget-password {
+	    		
+	    			position: absolute;
+	    			right: 10px;
+	    			top: 7px;
+	    			color: #ea2f28;
+
+	    	}
+	    	.tooltip {
+	    			width: 40%;
+	    		}
+	    }
 	}
+
+/* Password Reset */
+#reset-form {
+
+		
+		.password_reset {
+			background: #fff;
+			padding: 20px;
+			margin-top: 20%;
+			box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+			h2 {
+				margin-bottom: 20%;
+			}
+
+			p {
+				margin-top: 15px;
+				font-size: 11px;
+
+				.fa {
+					color: #ea2f28;
+				}
+			}
+			.btn {
+				width: 100%;
+				background: linear-gradient(268deg,#f51f14 17%,#ea2f28 100%);
+				color: #fff;
+				border-radius: 2px;
+			}
+
+
+		}
+	
+}

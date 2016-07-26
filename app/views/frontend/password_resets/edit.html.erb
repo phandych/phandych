@@ -1,0 +1,14 @@
+<div id="reset-form" class="row text-center">
+	<div class="col-md-4 col-md-offset-4">
+		<%= simple_form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+			<h2>Retrieve Password</h2>
+			<%= hidden_field_tag :email, @user.email %>
+			<%= f.input :password, label: false, placeholder: "Password" %>
+			<%= f.input :password_confirmation, label: false, placeholder: "Password Confirmation" %>
+			<%= f.button :submit, "Submit" %>
+			<p>
+			<i class="fa fa-info-circle" aria-hidden="true"></i> Please fill the password field to reset your password.
+		</p>
+		<% end %>
+	</div>
+</div>

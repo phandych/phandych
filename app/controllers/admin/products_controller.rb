@@ -25,6 +25,7 @@ class Admin::ProductsController < ApplicationController
 	end
 
 	def edit
+		@product_images = @product.product_images.all
 	end
 
 	def update

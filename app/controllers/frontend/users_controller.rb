@@ -1,6 +1,7 @@
 class Frontend::UsersController < ApplicationController
-  layout 'frontend/layouts/application', only: [:show, :edit, :update]
-	layout 'frontend/layouts/session', only: [:new, :create]
+	layout :resolve_layout
+  before_action :correct_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update]
 
 
   def show
@@ -14,7 +15,7 @@ class Frontend::UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-      @user.send_activation_email
+      @user.send_user_activation_email
   		flash[:info] = "Please check your email to activate your account"
   		redirect_to root_url
   	else
@@ -27,7 +28,22 @@ class Frontend::UsersController < ApplicationController
 
   private
 
+    def set_user
+      @user = User.find(params[:id])
+    end
+
   	def user_params
   		params.require(:user).permit(:full_name, :email, :password, :password_confirmation)
   	end
+
+    def resolve_layout
+      case action_name
+      when "new", "create"
+        "frontend/layouts/session"
+      when "show", "edit", "update"
+        "frontend/layouts/application"
+      else
+        "application"
+      end
+    end
 end

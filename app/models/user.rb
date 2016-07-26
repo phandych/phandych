@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	attr_accessor :remember_token, :activation_token
+	attr_accessor :remember_token, :activation_token, :reset_token
 	before_save :downcase_attributes
 	before_create :create_activation_digest
 	has_secure_password
@@ -46,14 +46,31 @@ class User < ActiveRecord::Base
 	end
 
 	# Activates an account.
-	def activate
+	def activate_user
 		update_attribute(:activated, true)
 		update_attribute(:activated_at, Time.zone.now)
 	end
 
 	# Sends activation email.
-	def send_activation_email
+	def send_user_activation_email
 		Frontend::UserMailer.account_activation(self).deliver_now
+	end
+
+	# Set the password reset aatributes
+	def create_user_reset_digest
+		self.reset_token = User.new_token
+		update_attribute(:reset_digest, User.digest(reset_token))
+		update_attribute(:reset_sent_at, Time.zone.now)
+	end
+
+	# Sends password reset email
+	def send_user_password_reset_email
+		Frontend::UserMailer.password_reset(self).deliver_now
+	end
+
+	# Returns true if a password reset has expired
+	def user_password_reset_expired?
+		reset_sent_at < 2.hours.ago
 	end
 
 

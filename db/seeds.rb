@@ -8,7 +8,6 @@
 
 Admin.create!(username: "phandy", email: "phandy.chandra@gmail.com", password: "foobar")
 
-
 Category.create! name: "flooring and wall"
 Category.create! name: "bath and kitchen"
 Category.create! name: "building material"
@@ -18,7 +17,6 @@ Category.create! name: "tools"
 Category.create! name: "houseware"
 Category.create! name: "appliances"
 Category.create! name: "hobbies"
-
 
 10.times do 
 	name = Faker::Commerce.product_name.downcase
@@ -31,4 +29,24 @@ Category.create! name: "hobbies"
 					model: model,
 					price: price,
 					description: description)
+end
+
+ 
+User.create!(full_name: "Phandy Chandra",
+			 email: "phandy@tokourban.com",
+			 password: "foobar",
+			 password_confirmation: "foobar",
+			 activated: true,
+             activated_at: Time.zone.now)
+
+10.times do |n|
+  name  = Faker::Name.name
+  email = "example-#{n+1}@example.com"
+  password = "foobar"
+  User.create!(full_name:  name,
+               email: email,
+               password:              password,
+               password_confirmation: password,
+			 activated: true,
+             activated_at: Time.zone.now)
 end

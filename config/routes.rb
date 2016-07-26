@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :frontend do
+  get 'password_resets/new'
+  end
+
+  namespace :frontend do
+  get 'password_resets/edit'
+  end
+
   root 'frontend/pages#home'
   
   get 'signup' => 'frontend/users#new'
@@ -16,6 +24,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show], module: 'frontend'
 
   resources :account_activations, only: [:edit], module: 'frontend'
+
+  resources :password_resets, only: [:new, :create, :edit, :update], module: 'frontend'
 
   namespace :admin do
     root 'pages#index'
