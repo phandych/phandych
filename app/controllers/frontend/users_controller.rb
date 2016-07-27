@@ -38,12 +38,12 @@ class Frontend::UsersController < ApplicationController
 
     def resolve_layout
       case action_name
-      when "new", "create"
-        "frontend/layouts/session"
-      when "show", "edit", "update"
-        "frontend/layouts/application"
-      else
-        "application"
+        when "new", "create"
+          "frontend/layouts/session"
+        when "show", "edit", "update"
+          "frontend/layouts/application"
+        else
+          "application"
       end
     end
 end
