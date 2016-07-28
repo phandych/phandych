@@ -2,29 +2,40 @@ class User < ActiveRecord::Base
 	attr_accessor :remember_token, :activation_token, :reset_token
 	before_save :downcase_attributes
 	before_create :create_activation_digest
-	has_secure_password
+
+	# Social App Omniauth
+	def self.from_omniauth(auth)
+		where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
+		  user.provider = auth.provider
+		  user.uid = auth.uid
+		  user.email = auth.info.email
+		  user.full_name = auth.info.name
+		  user.oauth_token = auth.credentials.token
+		  user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+		  user.password = SecureRandom.urlsafe_base64
+		  user.save!
+		end
+	end
+	
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-	validates_presence_of :full_name, :password_confirmation
+	validates_presence_of :full_name
+	has_secure_password
 	validates :password, presence: true, length: { minimum: 6 }
 	
 	def name
 		self.full_name = full_name.split
 	end
 
+	def password
+		SecureRandom.urlsafe_base64
+	end
+
 	def first_name
 		name.first.titleize
 	end
 
-	def self.from_omniauth(auth)
-		where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-			user.provider = auth.provider
-			user.uid = auth.uid
-			user.full_name = auth.info.name
-			user.oauth_token = auth.credentials.token
-			user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-		end
-	end
+
 
 	# Returns the hash digest of the given string.
 	def self.digest(string)
