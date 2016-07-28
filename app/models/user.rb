@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-	validates_presence_of :full_name, :password, :password_confirmation
+	validates_presence_of :full_name, :password_confirmation
 	validates :password, presence: true, length: { minimum: 6 }
 	
 	def name
@@ -14,6 +14,16 @@ class User < ActiveRecord::Base
 
 	def first_name
 		name.first.titleize
+	end
+
+	def self.from_omniauth(auth)
+		where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
+			user.provider = auth.provider
+			user.uid = auth.uid
+			user.full_name = auth.info.name
+			user.oauth_token = auth.credentials.token
+			user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+		end
 	end
 
 	# Returns the hash digest of the given string.

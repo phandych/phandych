@@ -17,6 +17,12 @@ class Frontend::SessionsController < ApplicationController
 		end
 	end
 
+	def social
+		@user = User.from_omniauth(env['omniauth.auth'])
+		session[:user_id] = @user.id
+		redirect_to root_url
+	end
+
 	def destroy
 		log_out_user if logged_in_user?
 		redirect_to root_url

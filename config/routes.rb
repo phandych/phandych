@@ -1,25 +1,5 @@
 Rails.application.routes.draw do
-  namespace :frontend do
-  get 'password_resets/new'
-  end
-
-  namespace :frontend do
-  get 'password_resets/edit'
-  end
-
   root 'frontend/pages#home'
-  
-  get 'signup' => 'frontend/users#new'
-  
-  post 'signup' => 'frontend/users#create'
-
-  get 'login' => 'frontend/sessions#new'
-  
-  post 'login' => 'frontend/sessions#create'
-
-  delete 'logout' => 'frontend/sessions#destroy'
-
-
   
   resources :users, only: [:show], module: 'frontend'
 
@@ -41,7 +21,20 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :new, :create, :edit, :update]
   end
 
- 
+
+  get 'signup' => 'frontend/users#new'
+  
+  post 'signup' => 'frontend/users#create'
+
+  get 'login' => 'frontend/sessions#new'
+  
+  post 'login' => 'frontend/sessions#create'
+
+  delete 'logout' => 'frontend/sessions#destroy'
+
+  get 'auth/:provider/callback', to: 'frontend/sessions#social'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

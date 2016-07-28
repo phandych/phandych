@@ -4,3 +4,5 @@
 
 $(document).on "turbolinks:load", ->
 	$('a').tooltip()
+
+
