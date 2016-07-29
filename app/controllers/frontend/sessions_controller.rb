@@ -25,9 +25,12 @@ class Frontend::SessionsController < ApplicationController
 	end
 
 	def social
-		@user = User.from_omniauth(env['omniauth.auth'])
-		log_in_user(@user)
-		redirect_to root_url
+		auth = request.env['omniauth.auth']
+		user = User.from_omniauth(auth)
+		authorization = user.authorizations.from_omniauth(auth)
+		flash[:success] = "Login Success, Happy Shopping :)"
+    	log_in_user(user)
+    	redirect_to root_path
 	end
 
 	def destroy
