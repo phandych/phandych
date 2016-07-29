@@ -7,23 +7,20 @@
 				<h3>Sign Up</h3>
 			</div>
 			<%= simple_form_for @user, url: signup_path do |f| %>
-				<div class="row social-login">
-					<div class="col-md-12 google">
-						<%= link_to "Sign in with Google", "/auth/google_oauth2", class: "btn" %>
-					</div>
-					<div class="col-md-6 facebook">
-						<%= link_to "Facebook", "/auth/facebook", class: "btn" %>
-					</div>
-					<div class="col-md-6 twitter">
-						<%= link_to "Twitter", "/auth/twitter", class: "btn" %>
-					</div>
-				</div>
-				<div class="divider"></div>
 				<%= f.input :full_name, label: false, placeholder: "Full Name" %>
 				<%= f.input :email, label: false, placeholder: "Email" %>
 				<%= f.input :password, label: false, placeholder: "Password" %>
 				<%= f.input :password_confirmation, label: false, placeholder: "Password Confirmation" %>
 				<%= f.button :submit, "Sign Up" %>
+				<div class="divider"></div>
+				<div class="row social-login">
+					<div class="col-md-6 facebook">
+						<%= link_to "Google", "/auth/google_oauth2", class: "btn" %>
+					</div>
+					<div class="col-md-6 google">
+						<%= link_to "Facebook", "/auth/facebook", class: "btn" %>
+					</div>
+				</div>
 			<% end %>
 		</div>
 		<div class="text-center">
