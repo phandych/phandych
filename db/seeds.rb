@@ -18,18 +18,24 @@ Category.create! name: "houseware"
 Category.create! name: "appliances"
 Category.create! name: "hobbies"
 
-10.times do 
-	name = Faker::Commerce.product_name.downcase
-	price = Faker::Commerce.price
-	sku = Faker::Code.isbn
-	model = Faker::Code.asin
-	description = Faker::Lorem.paragraph
-	Product.create!(name: name,
-					sku: sku,
-					model: model,
-					price: price,
-					description: description)
-end
+
+categories = Category.all
+		30.times do
+			name = Faker::Commerce.product_name.downcase
+			price = Faker::Commerce.price
+			sku = Faker::Code.isbn
+			model = Faker::Code.asin
+			description = Faker::Lorem.paragraph
+		  
+			categories.each { |category| category.products.create!(
+			  	name: name,
+				sku: sku,
+				model: model,
+				price: price,
+				description: description
+			  	) }
+		end
+
 
  
 User.create!(full_name: "Phandy Chandra",
@@ -47,6 +53,6 @@ User.create!(full_name: "Phandy Chandra",
                email: email,
                password:              password,
                password_confirmation: password,
-			 activated: true,
-             activated_at: Time.zone.now)
+			   activated: true,
+               activated_at: Time.zone.now)
 end

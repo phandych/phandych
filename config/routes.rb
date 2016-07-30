@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   get 'auth/:provider/callback', to: 'frontend/sessions#social'
 
+  get 'auth/failure', to: redirect('/')
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

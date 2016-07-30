@@ -5,4 +5,12 @@
 $(document).on "turbolinks:load", ->
 	$('a').tooltip()
 
+$(document).on "turbolinks:load", ->
+	if (window.location.href.indexOf('#_=_') > 0) 
+		window.location = window.location.href.replace(/#.*/, '')
+	if (window.location.href.indexOf('#') > 0) 
+		window.location = window.location.href.replace(/#.*/, '')
+
+
+
 
