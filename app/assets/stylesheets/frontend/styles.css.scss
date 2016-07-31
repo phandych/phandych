@@ -90,7 +90,7 @@ body {
 			background: #fff;
 			border: 1px solid #e6e6e6;
 			margin-bottom: 30px;
-			height: 200px;
+			min-height: 200px;
 			.title {
 				font-size: 20px;
 				font-weight: 700;
@@ -103,6 +103,59 @@ body {
 					color: #545454;
 					line-height: 25px;
 				}
+			}
+
+		}
+
+		.logistic-box {
+			padding: 15px;
+			background: #fff;
+			border: 1px solid #e6e6e6;
+			float: left;
+			width: 100%;
+			.logistic-list {
+				padding: 0;
+				li {
+					width: 100%;
+					padding: 10px;
+					border:1px #e8e8e8 solid;
+					transition: all 0.3s ease-out;
+					margin: 5px 0;
+					float: left;
+
+					&:hover {
+						background: #f4f8f9;
+						box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+
+						label {
+							background: #fff;
+						}
+
+						.fa {
+							color: #ea2f28;
+						}
+
+					}		
+					.logistic-info {
+						float: left;
+					}
+					label {
+						background: #f4f8f9;
+						border: 1px solid #607d8b;
+						padding: 6px 30px;
+						margin-left: 15px;
+						margin-top: 10px;
+						color: #607d8b;
+						font-weight: normal;
+
+					}
+
+					.fa {
+						margin-left: 10px;
+						margin-right: 5px;
+					}
+				}
+				
 			}
 		}
 	}
