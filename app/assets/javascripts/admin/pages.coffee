@@ -4,4 +4,4 @@
 
 
 $(document).on 'click', ->
-	$('nav.admin-menu.collapse').collapse('hide')
+	$('.admin-menu .collapse.in').collapse('hide')

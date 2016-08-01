@@ -113,49 +113,112 @@ body {
 			border: 1px solid #e6e6e6;
 			float: left;
 			width: 100%;
+
 			.logistic-list {
 				padding: 0;
-				li {
-					width: 100%;
-					padding: 10px;
-					border:1px #e8e8e8 solid;
-					transition: all 0.3s ease-out;
-					margin: 5px 0;
-					float: left;
 
-					&:hover {
+				li {
+					list-style: none;
+					float: left;
+					width: 100%;
+					margin: 10px;
+
+					.list-box {
+						border: 1px solid #e8e8e8;
+						padding: 10px 0;
+
+						&:hover, &.active {
 						background: #f4f8f9;
 						box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
 
+							label {
+								background: #fff;
+							}
+
+							.fa {
+								color: #ea2f28;
+							}
+						}
+
+						&.active {
+							border-bottom: 1px dashed #e8e8e8;
+						}
 						label {
-							background: #fff;
+							background: #f4f8f9;
+							border: 1px solid #607d8b;
+							padding: 6px 30px;
+							margin-left: 15px;
+							margin-top: 10px;
+							color: #607d8b;
+							font-weight: normal;
 						}
 
 						.fa {
-							color: #ea2f28;
+							margin-left: 10px;
 						}
-
-					}		
-					.logistic-info {
-						float: left;
-					}
-					label {
-						background: #f4f8f9;
-						border: 1px solid #607d8b;
-						padding: 6px 30px;
-						margin-left: 15px;
-						margin-top: 10px;
-						color: #607d8b;
-						font-weight: normal;
-
 					}
 
-					.fa {
-						margin-left: 10px;
-						margin-right: 5px;
+					.details-content {
+						border: 1px solid #e8e8e8;
+						border-top: none;
+						table {
+
+							&.table {
+								margin-top: 20px;
+							}
+							tr {
+								&.list-info {
+									td {
+										width: 50%;
+										padding-top: 15px;
+								
+
+										&:first-child {
+											padding-right: 5px;
+											strong {
+												display: block;
+											}
+										}
+
+										&:last-child {
+											padding-left: 5px;
+										}
+
+										.info-box {
+											border: 1px dashed #607d8b;
+											padding: 25px;
+											min-height: 190px;
+
+											strong {
+												label {
+												    border: 1px solid #ea2f28;
+												    padding: 5px 20px;
+												    margin-left: 15px;
+												    font-weight: normal;
+												    border-radius: 3px;
+												}
+											}
+
+											.info-pay {
+												line-height: 25px;
+												span, p { 
+													display: inline-block;
+												}
+
+												p {
+													float: right;
+													margin: 0;
+												}
+											}
+										}
+									}
+								}
+								
+							}
+						}
+						
 					}
 				}
-				
 			}
 		}
 	}
